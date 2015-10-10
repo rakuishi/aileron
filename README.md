@@ -40,6 +40,14 @@ Aileron supports these types for now.
 
 Supports Parcelable, ParcelableArray, ParcelableArrayList, and Serializable.
 
+## For developers
+
+**Upload library**
+
+```sh
+$ ./gradlew clean build bintrayUpload -PbintrayUser=[bintrayUser] -PbintrayKey=[bintrayKey] -PdryRun=false
+```
+
 ## License
 
 ```
