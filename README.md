@@ -7,7 +7,7 @@ public class ExampleActivity extends Activity {
 
     private static final String EXTRA_USER_ID = "user_id";
 
-    @Extra(EXTRA_USER_ID) int mUserId; // This will automatically extracted value from bundle
+    @Extra(EXTRA_USER_ID) int mUserId; // This will automatically set value from bundle
 
     public static Intent create(Context context, int userId) {
         Intent intent = new Intent(context, ExampleActivity.class);
@@ -23,6 +23,22 @@ public class ExampleActivity extends Activity {
     }
 }
 ```
+
+## Supported types
+
+Aileron supports these types for now.
+
+- Primitive types (byte, short, int, long, float, double, char, boolean)
+- List of primitive types (byte, short, int, long, float, double, char, boolean)
+- Primitive wrappers (Byte, Short, Int, Long, Float, Double, Char, Boolean)
+- ArrayList\<Integer\>
+- String, String[], ArrayList\<String\>
+- CharSequence, CharSequence[], ArrayList\<CharSequence\>
+- android.util.Size, android.util.SizeF
+
+## Todo
+
+Supports Parcelable, ParcelableArray, ParcelableArrayList, and Serializable.
 
 ## License
 
