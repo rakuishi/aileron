@@ -14,27 +14,22 @@ public final class Aileron {
     private Aileron() {}
 
     public static void roll(Activity target) {
-        Bundle extras = target.getIntent().getExtras();
-        if (extras != null) {
-            roll(target, extras);
-        }
+        roll(target, target.getIntent().getExtras());
     }
 
     public static void roll(Fragment target) {
-        Bundle extras = target.getArguments();
-        if (extras != null) {
-            roll(target, extras);
-        }
+        roll(target, target.getArguments());
     }
 
     public static void roll(android.support.v4.app.Fragment target) {
-        Bundle extras = target.getArguments();
-        if (extras != null) {
-            roll(target, extras);
-        }
+        roll(target, target.getArguments());
     }
 
     public static void roll(Object target, Bundle extras) {
+        if (extras == null) {
+            return;
+        }
+
         for (Field field: target.getClass().getDeclaredFields()) {
             Extra extra = field.getAnnotation(Extra.class);
             if (extra == null) {
