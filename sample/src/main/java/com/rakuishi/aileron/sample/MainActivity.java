@@ -15,12 +15,25 @@ public class MainActivity extends AppCompatActivity {
 
         final Activity activity = this;
 
-        Button button = (Button) findViewById(R.id.main_button);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(DetailActivity.create(activity, 1));
-            }
-        });
+        {
+            Button button = (Button) findViewById(R.id.main_activity_button);
+            button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    startActivity(SampleActivity.create(activity, 1207));
+                }
+            });
+        }
+
+        {
+            Button button = (Button) findViewById(R.id.main_fragment_button);
+            button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    SampleFragment fragment = SampleFragment.create(getString(R.string.app_name));
+                    fragment.show(getSupportFragmentManager(), "dialog");
+                }
+            });
+        }
     }
 }

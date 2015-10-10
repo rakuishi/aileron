@@ -1,6 +1,7 @@
 <resources>
 
     <string name="app_name">Aileron.roll</string>
-    <string name="launch">Launch</string>
+    <string name="launch_sample_activity">Launch Activity</string>
+    <string name="launch_sample_fragment">Launch Fragment</string>
 
 </resources>
