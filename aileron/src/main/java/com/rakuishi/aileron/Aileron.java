@@ -2,6 +2,7 @@ package com.rakuishi.aileron;
 
 import android.app.Activity;
 import android.app.Fragment;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 
@@ -121,10 +122,36 @@ public final class Aileron {
             case "java.util.List<java.lang.String>":
                 field.set(target, extras.getStringArrayList(key));
                 break;
+            case "class android.os.Bundle":
+                field.set(target, extras.getBundle(key));
+                break;
+            case "interface java.lang.CharSequence":
+                field.set(target, extras.getCharSequence(key));
+                break;
+            case "class [Ljava.lang.CharSequence;":
+                field.set(target, extras.getCharArray(key));
+                break;
+            case "java.util.ArrayList<java.lang.CharSequence>":
+                field.set(target, extras.getCharSequenceArrayList(key));
+                break;
+            case "class android.util.Size":
+                if (isLollipop()) {
+                    field.set(target, extras.getSize(key));
+                }
+                break;
+            case "class android.util.SizeF":
+                if (isLollipop()) {
+                    field.set(target, extras.getSizeF(key));
+                }
+                break;
         }
     }
 
-    public static void LOGD(String message) {
+    private static void LOGD(String message) {
         Log.d(Aileron.class.getSimpleName(), message);
+    }
+
+    private static boolean isLollipop() {
+        return Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP;
     }
 }
