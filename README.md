@@ -24,6 +24,14 @@ public class ExampleActivity extends Activity {
 }
 ```
 
+## Install
+
+```gradle
+dependencies {
+    compile 'com.rakuishi:aileron:0.1.0'
+}
+```
+
 ## Supported types
 
 Aileron supports these types for now.
@@ -42,7 +50,7 @@ Supports Parcelable, ParcelableArray, ParcelableArrayList, and Serializable.
 
 ## For developers
 
-**Upload library**
+### Upload library
 
 ```sh
 $ ./gradlew clean build bintrayUpload -PbintrayUser=[bintrayUser] -PbintrayKey=[bintrayKey] -PdryRun=false
