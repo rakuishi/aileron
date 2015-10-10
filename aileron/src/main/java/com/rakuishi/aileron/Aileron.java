@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.app.Fragment;
 import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
 
 import com.rakuishi.aileron.annotations.Extra;
 
@@ -41,7 +40,7 @@ public final class Aileron {
                 field.setAccessible(true);
                 setValue(target, field, extras, extra.value());
             } catch (SecurityException | IllegalAccessException e) {
-                LOGD(e.getMessage());
+                e.printStackTrace();
             }
         }
     }
@@ -145,10 +144,6 @@ public final class Aileron {
                 }
                 break;
         }
-    }
-
-    private static void LOGD(String message) {
-        Log.d(Aileron.class.getSimpleName(), message);
     }
 
     private static boolean isLollipop() {
