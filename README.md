@@ -1,6 +1,6 @@
 # Aileron
 
-Aileron is an Android library that eliminates the boilerplate of extracting values from bundle in activity. 
+Aileron is an Android library that eliminates the boilerplate of extracting values from bundle in activity or fragment.
 
 ```java
 public class ExampleActivity extends Activity {
